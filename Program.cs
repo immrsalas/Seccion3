@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.Design;
 using System.Globalization;
+using System.Runtime.Intrinsics.X86;
 using System.Security.Permissions;
 
 namespace Seccion3
@@ -8,62 +9,58 @@ namespace Seccion3
     {
         static void Main(string[] args)
         {
-            //Programa para realizar operaciones basicas
+            // Hacer un programa que le pida al usuario un número del 1 al 12 y escriba el nombre del mes que corresponde ese número en el calendario.Agregar un case default.
 
-            Console.WriteLine("Programa para realizar operaciones basicas");
-            Console.WriteLine("- - - - - - - - - - - - - - - - - - - - - -");
+            Console.WriteLine("Programa para saber el mes del año ingresando un numero del 1 al 12");
+            Console.WriteLine("- - - - - - - - - - - - - - - - - - - -");
 
-            Console.WriteLine("1. Sumar");
-            Console.WriteLine("2. Restar");
-            Console.WriteLine("3. Multiplicación");
-            Console.WriteLine("4. División");
-            Console.Write("Elige una opcion: ");
-            byte opcion = byte.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese un numero del 1 al 12");
+            byte numDelAño = byte.Parse(Console.ReadLine());
 
-            Console.Write("Ingresa el primer valor: ");
-            float valor1 = float.Parse(Console.ReadLine());
-
-            Console.Write("Ingresa el segundo valor: ");
-            float valor2 = float.Parse(Console.ReadLine());
-
-            float resultado = 0;
-            bool operacionExitosa = true;
-
-            switch (opcion)
+            switch (numDelAño)
             {
                 case 1:
-                    resultado = valor1 + valor2;
+                    Console.Write("Enero");
                     break;
-
                 case 2:
-                    resultado = valor1 - valor2;
+                    Console.Write("Febrero");
                     break;
-
                 case 3:
-                    resultado = valor1 * valor2;
+                    Console.Write("Marzo");
                     break;
-
                 case 4:
-                    if (valor2 != 0)
-                    {
-                        resultado = valor1 / valor2;
-                    }
-
-                    else { operacionExitosa = false; }
+                    Console.Write("Abril");
                     break;
-
+                case 5:
+                    Console.Write("Mayo");
+                    break;
+                case 6:
+                    Console.Write("Junio");
+                    break;
+                case 7:
+                    Console.Write("Julio");
+                    break;
+                case 8:
+                    Console.Write("Agosto");
+                    break;
+                case 9:
+                    Console.Write("Septiembre");
+                    break;
+                case 10:
+                    Console.Write("Octubre");
+                    break;
+                case 11:
+                    Console.Write("Noviembre");
+                    break;
+                case 12:
+                    Console.Write("Diciembre");
+                    break;
                 default:
-                    operacionExitosa = false;
+                    Console.WriteLine("Solo puedes ingresar del 1 al 12");
                     break;
             }
-
-            if (operacionExitosa)
-            {
-                Console.Write("El resultado es: {0}", resultado);
-            }
-
             
-          
+            
             Console.ReadKey();
         }
  
