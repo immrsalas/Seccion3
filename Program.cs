@@ -9,17 +9,25 @@ namespace Seccion3
     {
         static void Main(string[] args)
         {
-            //Hacer un programa que le pida al usuario un número y decirle si éste es par o impar.
+            //Hacer un programa que le diga al usuario el precio que debe pagar por el servicio de estacionamiento de un centro comercial con base en el tiempo que ha permanecido ahí, los primeros 60 minutos: $5.00, las primeras 2 horas $15.00 y de 2 horas en adelante: $40.00   
 
-            Console.WriteLine("Programa para saber si un numero es par o impar");
+            Console.WriteLine("Precio por el servicio de estacionamiento");
 
-            Console.Write("Ingresa un numero: ");
-            int numero = int.Parse(Console.ReadLine());
+            Console.WriteLine("- - - - - - - - - -");
 
-            if (numero % 2 == 0) { Console.WriteLine("Tu numero {0} es par", numero); }
+            Console.WriteLine("¿Cuanto tiempo permaneció dentro del establecimiento? (Minutos)");
 
-            else { Console.WriteLine("Tu numero {0} es impar", numero); }
-           
+            int tiempoMinutos = int.Parse(Console.ReadLine());
+            
+            if (tiempoMinutos > 0 && tiempoMinutos <= 60) { Console.WriteLine("Total a pagar: $5.00"); }
+
+            else if (tiempoMinutos >= 61 && tiempoMinutos <=120) { Console.WriteLine("Total a pagar: $15.00"); }
+         
+            else if (tiempoMinutos > 120) { Console.WriteLine("Total a pagar: $40.00"); }
+
+            else { Console.WriteLine("Ingresa minutos validos"); }
+
+
             Console.ReadKey();
         }
  
